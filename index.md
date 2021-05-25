@@ -12,3 +12,10 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
  db.changeUserPassword(username, password)
 ```
 
+### Indices
+
+#### Indexar un campo
+
+```
+db.collection_name.createIndex({"campo_a_indexar": 1})
+```
