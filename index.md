@@ -6,12 +6,18 @@ Este es un resumen de comandos que he ido guardando durante mi aprendizaje y uti
 
 ## Ver si el servicio de Mongo está ejecutandose
 ```
-service mongod status
+ service mongod status
 ```
+o sinó:
+
+```
+ sudo /etc/init.d/mongodb stop
+``` 
+
 La salida debería ser algo como esto:
 
 ```
-● mongod.service - MongoDB Database Server
+ ● mongod.service - MongoDB Database Server
      Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
      Active: inactive (dead)
        Docs: https://docs.mongodb.org/manual
@@ -20,7 +26,7 @@ La salida debería ser algo como esto:
 ## Inicial el servicio de Mongo
 
 ```
-service mongod status
+ service mongod status
 ```
 
 
