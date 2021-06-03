@@ -95,6 +95,12 @@ user NombreDB
 
 Debemos mencionar que si la base de datos no existe con tan solo ejecutar el anterior comando estaremos creando la misma. Si agregamos documentos a dicha base de datos esta será guardada, pero si no se agrega ninguna colección o documentos a la misma dicha base de datos es eliminada automáticamente.
 
+Para ver la base de datos actual:
+
+```
+ db
+```
+
 
 ### Comando **show**
 
@@ -120,6 +126,14 @@ Si ya nos encontramos dentro de una DB (hemos utilizado el comando use NombreDB)
 show collections
 ```
 
+### Insertar documentos
+
+Para insertar documentos dentro de una colección utilizamos **insert**
+
+```
+ db.products.insert({“name”: “Laptop DELL”})
+```
+En este caso hemos ejemplificado insertando el campo (field) **name** dentro de la colección **products**. En caso de que no exista dicha colección la misma es creada con la inserción del primer documento.
 
 
 ### Implementar Autenticación
@@ -155,6 +169,15 @@ Donde hemos especificado el nombre de la base de datos que vamos a exportar. Una
 
 #### Importar con mongorestore
 
+Para importar una base de datos desde consola nos hubicamos en una carpeta que esté un nivel más arriba de la carpeta donde tengamos la DB que queremos importar y ejecutamos el comando:
+
 ```
   mongorestore --db nombre_que_se_dara_a_la_bd carpeta_donde_esta/
 ```
+
+En el caso de una base de datos que requiere autenticación procedemos de la siguiente manera:
+
+```
+mongorestore --username username --password password --authenticationDatabase admin --db nombre_que_se_dara_a_la_bd carpeta_donde_esta/
+```
+
