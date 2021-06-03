@@ -147,15 +147,6 @@ En este caso hemos ejemplificado insertando el campo (field) **name** dentro de 
 ```
 
 
-### Indices
-
-#### Indexar un campo
-
-```
-db.collection_name.createIndex({"campo_a_indexar": 1})
-```
-
-
 ### Exportar o Importar
 
 #### Exportar con mongodump
@@ -181,3 +172,11 @@ En el caso de una base de datos que requiere autenticación procedemos de la sig
 mongorestore --username username --password password --authenticationDatabase admin --db nombre_que_se_dara_a_la_bd carpeta_donde_esta/
 ```
 
+
+### Indices
+
+#### Indexar un campo
+
+```
+db.collection_name.createIndex({"campo_a_indexar": 1})
+```
