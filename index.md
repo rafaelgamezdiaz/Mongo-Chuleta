@@ -96,7 +96,7 @@ user NombreDB
 Debemos mencionar que si la base de datos no existe con tan solo ejecutar el anterior comando estaremos creando la misma. Si agregamos documentos a dicha base de datos esta será guardada, pero si no se agrega ninguna colección o documentos a la misma dicha base de datos es eliminada automáticamente.
 
 
-### Comandos **show**
+### Comando **show**
 
 #### Ver bases de datos exitentes
 
