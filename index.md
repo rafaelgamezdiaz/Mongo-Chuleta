@@ -2,17 +2,22 @@
 
 Este es un resumen de comandos que he ido guardando durante mi aprendizaje y utilización de bases de datos en mongoDB. Espero que pueda seer de utilidad a otros como lo es para mí.
 
-#### Iniciar, Deneter y ver si el servicio de Mongo esta corriendo
+### Iniciar, Deneter y ver si el servicio de Mongo esta corriendo
 
-## Ver si el servicio de Mongo está ejecutandose
+#### Ver si el servicio de Mongo está ejecutandose
 ```
  service mongod status
 ```
 o sinó:
 
 ```
- sudo /etc/init.d/mongodb stop
+ sudo /etc/init.d/mongodb status
 ``` 
+
+o sinó:
+```
+ systemctl status mongod
+```
 
 La salida debería ser algo como esto:
 
@@ -23,14 +28,36 @@ La salida debería ser algo como esto:
        Docs: https://docs.mongodb.org/manual
 ```
 
-## Inicial el servicio de Mongo
+#### Iniciar el servicio de Mongo
 
 ```
- service mongod status
+ service mongod start
+```
+o sinó:
+
+```
+ sudo /etc/init.d/mongodb start
+``` 
+o sinó:
+```
+ systemctl start mongod
 ```
 
+#### Detener el servicio de Mongo
 
-## Detener el servicio de Mongo
+```
+ service mongod stop
+```
+o sinó:
+
+```
+ sudo /etc/init.d/mongodb stop
+``` 
+
+o sinó:
+```
+ systemctl stop mongod
+```
 
 ### Implementar Autenticación
 
