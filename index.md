@@ -29,6 +29,8 @@ La salida debería ser algo como esto:
      Active: inactive (dead)
        Docs: https://docs.mongodb.org/manual
 ```
+En este caso vemos que el servicio mongod se encuentra detenido.
+
 
 #### Iniciar el servicio de Mongo
 
