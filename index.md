@@ -144,7 +144,7 @@ db.collection_name.createIndex({"campo_a_indexar": 1})
 
 ### Exportar o Importar
 
-#### Exportar con Mongodump
+#### Exportar con mongodump
 
 Para exportar una base de datos completa utilizamos **mongodump**. Debemos tener en cuenta que debemos estar ubicados fuera de la consola de mongo, es decir, en una terminal normal. Nos ubicamos dentro de la carpeta donde queremos respaldar la base de datos y ejecutamos:
 
@@ -152,3 +152,9 @@ Para exportar una base de datos completa utilizamos **mongodump**. Debemos tener
  mongodump --db nombre_bd
 ```
 Donde hemos especificado el nombre de la base de datos que vamos a exportar. Una vez ejecutado el comando, Mongo va a crear una carpeta llamada dump, dentro de la ubicación donde nos encontrabamos en la consola cuando ejecutamos el comando. Dentro de dicha carpeta Mongo creará dos archivos por cada colección que tengamos.
+
+#### Importar con mongorestore
+
+```
+  mongorestore --db nombre_que_se_dara_a_la_bd carpeta_donde_esta/
+```
