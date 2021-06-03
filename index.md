@@ -126,6 +126,15 @@ Si ya nos encontramos dentro de una DB (hemos utilizado el comando use NombreDB)
 show collections
 ```
 
+### Colecciones
+
+#### Crear una colección
+
+```
+ show createCollection(“users”)
+```
+#### Eliminar una colección
+
 ### Insertar documentos
 
 Para insertar documentos dentro de una colección utilizamos **insert**
