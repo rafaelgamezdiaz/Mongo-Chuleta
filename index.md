@@ -84,6 +84,44 @@ O de forma abreviada
  mongo -u nombre_usuario -p contraseña_usuario
 ```
 
+
+## Utilizar una base de datos
+
+Si ya tenemos una base de datos existente para poder utilizarla ejecutamos 
+
+```
+user NombreDB
+```
+
+Debemos mencionar que si la base de datos no existe con tan solo ejecutar el anterior comando estaremos creando la misma. Si agregamos documentos a dicha base de datos esta será guardada, pero si no se agrega ninguna colección o documentos a la misma dicha base de datos es eliminada automáticamente.
+
+
+## Comandos para visualizar
+
+### Ver bases de datos exitentes
+
+```
+ show dbs
+```
+
+### Ver usuarios de mongo
+
+Los usuarios se utilizan en el caso de que vayamos a implementar autenticación a alguna o algunas de nuestras bases de datos (Más adelante veremos como hacer eso). Con el siguiente comando podemos visualizar los usuarios que existan:
+
+```
+ show users
+```
+
+### Ver colexiones existentes
+
+Si ya nos encontramos dentro de una DB (hemos utilizado el comando use NombreDB), entonces podemos ver que colecciones existen dentro de dicha base de datos:
+
+```
+show collections
+```
+
+
+
 ### Implementar Autenticación
 
 ...
@@ -94,6 +132,7 @@ O de forma abreviada
  db.changeUserPassword(username, password)
 ```
 
+
 ### Indices
 
 #### Indexar un campo
@@ -101,3 +140,7 @@ O de forma abreviada
 ```
 db.collection_name.createIndex({"campo_a_indexar": 1})
 ```
+
+
+## Exportar o Importar una base de datos
+
