@@ -85,7 +85,7 @@ O de forma abreviada
 ```
 
 
-### Utilizar una base de datos
+### Acceder a una base de datos
 
 Si ya tenemos una base de datos existente para poder utilizarla ejecutamos 
 
