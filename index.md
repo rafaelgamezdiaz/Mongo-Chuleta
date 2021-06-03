@@ -142,5 +142,5 @@ db.collection_name.createIndex({"campo_a_indexar": 1})
 ```
 
 
-### Exportar o Importar una base de datos
+### Exportar o Importar
 
