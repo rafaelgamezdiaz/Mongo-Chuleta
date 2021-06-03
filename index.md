@@ -1,4 +1,4 @@
-## Mongo-Chuleta
+## Introducción
 
 Este es un resumen de comandos que he ido guardando durante mi aprendizaje y utilización de bases de datos en mongoDB. Espero que pueda seer de utilidad a otros como lo es para mí.
 
