@@ -63,6 +63,27 @@ o sinó:
  systemctl stop mongod
 ```
 
+### Acceder a la consola
+
+Si el demonio (servicio) de mongod se encuentra ejecutandose podemos acceder a la consola de mongo sencillamente escribiendo en la terminal:
+
+```
+ mongo
+```
+
+#### Acceder en caso de que la base de datos requiera autenticación
+
+En caso de que a la base de datos se le haya aplicado autenticación debemos acceder introduciendo las credenciales correspondientes:
+
+```
+ mongo -username nombre_usuario -password contraseña_usuario
+```
+O de forma abreviada
+
+```
+ mongo -u nombre_usuario -p contraseña_usuario
+```
+
 ### Implementar Autenticación
 
 ...
