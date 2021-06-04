@@ -130,10 +130,20 @@ show collections
 
 #### Crear una colección
 
+Creamos una colección llamada products.
 ```
- show createCollection(“users”)
+ db.createCollection(“products”)
 ```
+
+En Mongo no es obligatorio crear una colección de esta manera. Con el comando insert mostrado mas adelante también es posible crear la colección una vez que se agregan documentos a la misma.
+
+
 #### Eliminar una colección
+
+Eliminamos una colección llamada products.
+```
+ db.products.drop()
+```
 
 ### Insertar documentos
 
