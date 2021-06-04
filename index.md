@@ -155,6 +155,21 @@ Para insertar documentos dentro de una colección utilizamos **insert**
 En este caso hemos ejemplificado insertando el campo (field) **name** dentro de la colección **products**. En caso de que no exista dicha colección la misma es creada con la inserción del primer documento.
 
 
+### Actualizar en múltiples documentos
+
+Ejemplo: Para actualizar el valor del campo **fieldNameToUpdate** por el nuevo valor ***newValue***, en todos los documentos que cumplan con que el campo **fieldNameToSearch** tenga el valor ***value***.
+```
+ db.tx.updateMany({fieldNameToSearch: value},{$set: {fieldNameToUpdate: newValue}})
+```
+
+### Eliminar un documento
+
+Si queremos eliminar un documento por ejemplo conociendo su "id" lo hacemos de la siguiente forma:
+```
+ db.paymentMethod.deleteOne({_id : ObjectId("6082fffb053c79232fbcf1bb")})
+```
+
+
 ### Implementar Autenticación
 
 ...
