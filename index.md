@@ -155,7 +155,7 @@ Para insertar documentos dentro de una colección utilizamos **insert**
 En este caso hemos ejemplificado insertando el campo (field) **name** dentro de la colección **products**. En caso de que no exista dicha colección la misma es creada con la inserción del primer documento.
 
 
-### Buscar documentos (comando find)
+### Buscar documentos (find)
 
 Para buscar documentos el comando básico es ***find*** y sus versiones. Por otra parte el comando ***aggregate*** permite realizar queries más complejas pero eso lo veremos más adelante.
 
@@ -173,7 +173,21 @@ Si por otra parte queremos ver documentos específicos debemos ejecutar una quer
 
 En el final hemos agregado el comando pretty(), el cuál mostrará la respuesta de una forma más amigable al usuario.
 
-#### Busquedas condicionales
+Si por otra parte utilizamos ***findOne*** obtenemos solo el primer documento como resultado de la query
+
+```
+ db.users.findOne({role: "student"}).pretty()
+```
+
+#### Mostrar determinado campos en la respuesta
+
+Para esto definimos el segundo parámetro dentro del comando find:
+
+```
+ db.products.find({“name”: “Latitude”},{“name”:1})
+```
+
+#### Búsquedas condicionales
 
 También podemos utilizar condicionales para realizar nuestras queries:
 
