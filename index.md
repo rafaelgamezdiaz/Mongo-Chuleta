@@ -118,7 +118,7 @@ Los usuarios se utilizan en el caso de que vayamos a implementar autenticación 
  show users
 ```
 
-#### Ver colexiones existentes
+#### Ver colecciones existentes
 
 Si ya nos encontramos dentro de una DB (hemos utilizado el comando use NombreDB), entonces podemos ver que colecciones existen dentro de dicha base de datos:
 
@@ -153,6 +153,35 @@ Para insertar documentos dentro de una colección utilizamos **insert**
  db.products.insert({“name”: “Laptop DELL”})
 ```
 En este caso hemos ejemplificado insertando el campo (field) **name** dentro de la colección **products**. En caso de que no exista dicha colección la misma es creada con la inserción del primer documento.
+
+
+### Buscar documentos (comando find)
+
+Para buscar documentos el comando básico es ***find*** y sus versiones. Por otra parte el comando ***aggregate*** permite realizar queries más complejas pero eso lo veremos más adelante.
+
+Para ver todos los documentos de una colección:
+
+```
+ db.nombre_coleccion.find()
+``` 
+
+Si por otra parte queremos ver documentos específicos debemos ejecutar una query dentro del primer parámetro de find, por ejemplo, si desemos buscar un usuario de apellido "Gamez" dentro de la colección ***users*** ejecutamos la sentencia:
+
+```
+ db.users.find({lastName: "Gamez"}).pretty()
+```
+
+En el final hemos agregado el comando pretty(), el cuál mostrará la respuesta de una forma más amigable al usuario.
+
+#### Busquedas condicionales
+
+También podemos utilizar condicionales para realizar nuestras queries:
+
+```
+ db.users.find({age: {$gte: 25}}).pretty()
+```
+Es este caso hemos buscado todos los usuarios dentro de la colección users que tienen25 años o más.
+
 
 
 ### Actualizar en múltiples documentos
