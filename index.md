@@ -184,8 +184,10 @@ Si por otra parte utilizamos ***findOne*** obtenemos solo el primer documento co
 Para esto definimos el segundo parámetro dentro del comando find:
 
 ```
- db.products.find({“name”: “Latitude”},{“name”:1})
+ db.products.find({“age”: 40},{“name”:1, "lastName":1}).pretty()
 ```
+En este ejemplo estamos mostrando todos los documentos de los usuarios que tienen edad 40, pero solo se están mostrando los campos name y lastname de cada documeto.
+
 
 #### Búsquedas condicionales
 
