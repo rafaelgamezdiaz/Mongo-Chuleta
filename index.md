@@ -194,7 +194,7 @@ También podemos utilizar condicionales para realizar nuestras queries:
 ```
  db.users.find({age: {$gte: 25}}).pretty()
 ```
-Es este caso hemos buscado todos los usuarios dentro de la colección users que tienen25 años o más. $gte nos retorna los documentos en cuyo campo que se compara se tenga un valor mayoe e igual a determinado valor. 
+Es este caso hemos buscado todos los usuarios dentro de la colección users que tienen 25 años o más. $gte nos retorna los documentos en cuyo campo que se compara se tenga un valor mayor e igual a determinado valor. 
 
 Tendremos entonces 
 - $gt: mayores que ..., 
