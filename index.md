@@ -165,6 +165,12 @@ Para ver todos los documentos de una colección:
  db.nombre_coleccion.find()
 ``` 
 
+Otra forma de retornar todos los documentos es definiendo el parámetro de la búsqueda como un objeto vacío.
+
+```
+ db.nombre_coleccion.find({})
+``` 
+
 Si por otra parte queremos ver documentos específicos debemos ejecutar una query dentro del primer parámetro de find, por ejemplo, si desemos buscar un usuario de apellido "Gamez" dentro de la colección ***users*** ejecutamos la sentencia:
 
 ```
@@ -179,7 +185,7 @@ Si por otra parte utilizamos ***findOne*** obtenemos solo el primer documento co
  db.users.findOne({role: "student"}).pretty()
 ```
 
-#### Mostrar determinado campos en la respuesta
+#### Mostrar/Ocultar determinado campos en la respuesta
 
 Para esto definimos el segundo parámetro dentro del comando find:
 
@@ -187,6 +193,13 @@ Para esto definimos el segundo parámetro dentro del comando find:
  db.products.find({“age”: 40},{“name”:1, "lastName":1}).pretty()
 ```
 En este ejemplo estamos mostrando todos los documentos de los usuarios que tienen edad 40, pero solo se están mostrando los campos name y lastname de cada documeto.
+
+Por otra parte para ocultar determinados campos procedemos de la siguiente manera:
+```
+ db.products.find({},{_id:0, password:0}).pretty()
+```
+
+En este caso estamos ocultando los campos id y password en cada documento.
 
 
 #### Búsquedas condicionales
