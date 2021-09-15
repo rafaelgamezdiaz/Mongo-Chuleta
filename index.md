@@ -292,6 +292,48 @@ Y reiniciamos el servicio de mongo:
 ```
 
 
+
+#### Conectarnos y autenticarnos con el usuario administrador
+
+Para conectarnos:
+
+``` 
+ mongo mongodb://<host>:<port>
+```
+
+Para autenticarnos
+
+```
+ db.auth("useradmin", "miclavesupersecreta")
+```
+
+Otra forma de conectarnos podría ser 
+
+```mongodb://superadmin:thepianohasbeendrinking@<host>:<port> ```
+
+Sin embargo, no es recomendable hacer esto desde la consola, ya que quedaría registro del usuario y contraseña en el historial de la consola lo que podr´ia ser un riesgo de seguridad. Este ultima forma de conexón si es totalmente válida en el caso de que vayamos a conectarnos a una base de datos desde una API, script, ...
+
+
+#### Creando usuarios adicionales
+
+Llego el momento de colocarle credenciales a la base de datos que queremos proteger. Para esto tenemos que crear el usuario y contraseña para acceder, y asignarle el role correspondiente.
+
+Primeramente accedemos a la base de datos
+
+```
+ use mydatabase
+```
+y creamos el usuario con el role que permite lectura y escritura en la base de datos:
+
+```
+ db.createUser(
+  {
+    user: "myUser
+    pwd: "xyz123",
+    roles: [ { role: "readWrite", db: "mydatabase" } ]
+  }
+```
+
 #### Cambiar contraseña de la base de datos
 
 ```
