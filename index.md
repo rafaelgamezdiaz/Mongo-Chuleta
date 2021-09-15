@@ -235,7 +235,62 @@ Si queremos eliminar un documento por ejemplo conociendo su "id" lo hacemos de l
 
 ### Implementar Autenticación
 
-...
+Si vamos a colocar nuestra base de datos en producción es sumamente necesario que la misma solo pueda ser accedida a través de credenciales seguras. Es decir, si nuestra API va a realizar operaciones con la base de datos debería poder acceder a la misma solamente utilizando un usuario y contraseña. Estos son los pasos habilitar la autenticación en nuestra base de datos.
+
+nota: Debemos tener en cuenta que una vez que habilitemos la autenticación en el servidor (así sea en nuestro servidor local), todos los clientes deberán autenticarse cómo usuarios válidos, y solo podrán realizar acciones que estén determinadas por su Role. Es decir, que si tenemos varias bases de datos para cada una de ellas debemos tener credenciales de acceso.
+
+Pero dejemos la charla y procedamos a implementar la autenticación:
+
+Primeramente nos conectamos a mongo en la consola en la forma
+
+```
+ mongo mongodb://<host>:<port>
+```
+Que en nuestro caso podría ser
+
+```
+ mongo mongodb://localhost:27027
+```
+Ahora es necesario que creemos un usuario administrador. Para esto nos movemos al la base  de datos admin que existe por default en mongo.
+
+```
+ use admin
+```
+Procedemos a crear el usuario admin ***useradmin***
+```
+ db.createUser(
+   {
+     user: "useradmin",
+     pwd: "miclavesupersecreta",
+     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+   }
+ )
+```
+
+Hemos creado este usuario con el role ***userAdminAnyDatabase***, lo cual le permite crear otros usuarios para cualquier base de datos existente.
+
+Ahora nos desconectamos de mongo shell ***Ctrl+D***
+
+El paso siguiente es habilitar la autenticación en el archivo de configuración de Mongo. Para esto localizamos el archivo: ***/etc/mongod.conf*** y lo abrimos con cualquier el editor de texto. Debemos localizar la línea:
+
+```
+ security:
+    authorization: "disabled"
+```
+
+y la modificamos:
+
+```
+ security:
+    authorization: "enabled"
+```
+
+Y reiniciamos el servicio de mongo:
+
+```
+ sudo service mongodb restart
+```
+
 
 #### Cambiar contraseña de la base de datos
 
